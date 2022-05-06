@@ -1,4 +1,4 @@
-    product ={
+product ={
     name:"Harina",
     quantity: 20,
     measure: "1lbs",

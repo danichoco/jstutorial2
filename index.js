@@ -1,18 +1,21 @@
-    product ={
-    name:"Harina",
-    quantity: 20,
-    measure: "1lbs",
-    transaction:[5, 20, -5, 10, -6],
-     updateQuantity: function(){
-        quantity=0;
-    
-        for(i=0; i< this.transaction.length; i++){
-            quantity= quantity + this.transaction[i];
+bank = {
+    name: "Bank of america",
+    clients: [
+        {name: "Jorge", credit: 23 },
+        {name: "Yenny", credit: 55 },
+        {name: "Bob",   credit: 56 },
+        {name: "Juan",  credit: 33 },
+    ],
+    findCredit: function(name){
+        for(client of this.clients){
+            if(client.name == name){
+                return client.credit;
+            }
         }
-        this.quantity=quantity;
-        return this.quantity; 
-   }
- }
+        return -1;
+    }
+};
 
- console.log(product.updateQuantity);
- console.log(product.updateQuantity());
+console.log(bank.findCredit("Juan"))
+console.log(bank.findCredit("Jorge"))
+console.log(bank.findCredit("Yenny"))

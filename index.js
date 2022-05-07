@@ -1,21 +1,35 @@
-bank = {
-    name: "Bank of america",
-    clients: [
-        {name: "Jorge", credit: 23 },
-        {name: "Yenny", credit: 55 },
-        {name: "Bob",   credit: 56 },
-        {name: "Juan",  credit: 33 },
-    ],
-    findCredit: function(name){
-        for(client of this.clients){
-            if(client.name == name){
-                return client.credit;
+statements= require("./fin-statements.json");
+
+function findUserList(){
+    list=[];
+    for( month of statements){
+        for(balances of month.balances){
+            contiene=list.includes(balances.user)
+            if(!contiene){
+            list.push(balances.user)
             }
         }
-        return -1;
-    }
-};
 
-console.log(bank.findCredit("Juan"))
-console.log(bank.findCredit("Jorge"))
-console.log(bank.findCredit("Yenny"))
+    }
+  return list;
+}
+
+function calcIncome(name){
+    income=0;
+    prevBalance=0;
+  for(months of statements){
+      for(balances of months.balances){
+          if(balances.user ==name){
+             monthIncome = balances.amount-prevBalance
+             prevBalance=balances.amount;
+             income+= monthIncome
+          }
+      }
+  }
+  return income;
+}
+userList=findUserList();
+for(user of userList ) {   
+    console.log("total income for user"  +  user  +  "is equal to:" + calcIncome("Jade"))
+}
+

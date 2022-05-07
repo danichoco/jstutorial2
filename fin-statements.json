@@ -1,0 +1,29 @@
+[
+    {
+    "month": "september",
+    "balances": [
+        {"user": "Jade", "amount": 10},
+        {"user": "Marry", "amount": 15},
+        {"user": "Albert", "amount": 20}
+    ]
+    },
+    {
+        "month": "october",
+        "balances": [
+        {"user": "Jade", "amount": 20  },
+        {"user": "Marry", "amount": 50 },
+        {"user": "Albert", "amount": 25},
+        {"user": "Bob",  "amount": 10   }
+        ]
+    },
+    {
+     "month": "november",
+    "balances": [
+        {"user": "Jade", "amount": 80  },
+        {"user": "Marry", "amount": 55 },
+        {"user": "Albert", "amount": 30},
+        {"user": "Bob",  "amount": 100 },
+        {"user": "Mario",  "amount": 40 }
+    ]
+    }
+]
